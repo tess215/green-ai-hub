@@ -1,0 +1,8 @@
+{
+  "name": "Kolibri - Sparsame KI-Pipeline",
+  "description": "Nachhaltiges KI-Gateway mit Eco-Cache, Teamwissen, Grüner Websuche, CO2-Kassenbon und Agenten-Baukasten.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ],
+  "permissions": []
+}

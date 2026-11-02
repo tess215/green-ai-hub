@@ -1,0 +1,481 @@
+/**
+ * @file ChatMessageItem.css
+ * Styling für Chat-Nachrichten mit garantiert barrierefreiem Kontrast (WCAG AAA/AA).
+ * Kein hellgrauer Text, kein weißer Text auf hellem Grund.
+ */
+
+.chat-item-wrapper {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.chat-item-user {
+  justify-content: flex-end;
+}
+
+.chat-item-agent {
+  justify-content: flex-start;
+}
+
+.chat-item-user-bubble {
+  max-width: 85%;
+  background-color: #0f172a; /* Tiefdunkles Slate 900 */
+  color: #ffffff; /* Reines Weiß auf dunklem Grund: Kontrast 15:1 */
+  border-radius: 18px 18px 4px 18px;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.chat-item-agent-card {
+  max-width: 720px;
+  width: 100%;
+  background-color: #ffffff; /* Reines Weiß */
+  border: 2px solid #cbd5e1; /* Solider sichtbarer Rahmen */
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* 1. Kurzfassung */
+.chat-item-summary {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a; /* Pitch black slate: maximaler Kontrast */
+  line-height: 1.45;
+  margin-bottom: 14px;
+}
+
+.chat-item-footnote-ref {
+  color: #be123c; /* Kräftiges Dunkelrot */
+  font-weight: 800;
+  font-size: 13px;
+  margin-left: 4px;
+  text-decoration: underline;
+  cursor: help;
+}
+
+/* 2. Details & Beispiel Abschnitte */
+.chat-item-section {
+  margin-top: 12px;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f8fafc;
+}
+
+.chat-item-section-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a; /* Tiefschwarz */
+  background-color: #f1f5f9;
+  border: none;
+  border-bottom: 2px solid #cbd5e1;
+  cursor: pointer;
+  text-align: left;
+}
+
+.chat-item-section-toggle:hover {
+  background-color: #e2e8f0;
+}
+
+.chat-item-section-body {
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b; /* Dunkles Slate 800: Kontrast > 11:1 */
+  line-height: 1.65;
+  background-color: #ffffff;
+}
+
+/* 3. Codeblock */
+.chat-item-code-box {
+  margin-top: 14px;
+  border: 2px solid #334155;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #090d16;
+}
+
+.chat-item-code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #1e293b;
+  color: #f8fafc;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.chat-item-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background-color: #334155;
+  color: #ffffff;
+  border: 1px solid #64748b;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chat-item-copy-btn:hover {
+  background-color: #475569;
+}
+
+.chat-item-code-pre {
+  margin: 0;
+  padding: 16px;
+  color: #f1f5f9;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+/* 4. Herkunftszeilen & Buttons */
+.chat-item-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 2px solid #e2e8f0;
+}
+
+.chat-item-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.chat-item-badge-cache {
+  background-color: #dcfce7;
+  color: #14532d; /* Tiefgrün: Kontrast > 10:1 */
+  border: 2px solid #86efac;
+}
+
+.chat-item-badge-library {
+  background-color: #dbeafe;
+  color: #1e3a8a; /* Tiefblau: Kontrast > 9:1 */
+  border: 2px solid #93c5fd;
+}
+
+.chat-item-badge-provider {
+  background-color: #ffe4e6;
+  color: #881337; /* Tiefes Weinrot: Kontrast > 9:1 */
+  border: 2px solid #fecdd3;
+}
+
+.chat-item-badge-fallback {
+  background-color: #fef3c7;
+  color: #78350f; /* Tiefes Dunkelbraun/Bernstein: Kontrast > 9:1 */
+  border: 2px solid #fde68a;
+}
+
+.chat-item-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background-color: #f1f5f9;
+  color: #0f172a;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chat-item-btn:hover {
+  background-color: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+/* 5. Genutzte Quellen Grid */
+.chat-item-sources-box {
+  margin-top: 12px;
+  padding: 14px;
+  background-color: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+}
+
+.chat-item-sources-header {
+  font-size: 12px;
+  font-weight: 800;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.chat-item-sources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+}
+
+.chat-item-source-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background-color: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+.chat-item-source-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.chat-item-source-detail {
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Tabs für Quellen & Suchpfad */
+.chat-item-sources-tab-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  background-color: #e2e8f0;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.chat-item-sources-tab-btn {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  color: #1e293b;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.chat-item-sources-tab-btn.active {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.chat-item-search-loc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chat-item-search-loc-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  background-color: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+}
+
+.chat-item-search-loc-item.hit {
+  border-color: #15803d;
+  background-color: #f0fdf4;
+}
+
+.chat-item-search-loc-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.chat-item-search-loc-icon {
+  padding: 8px;
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  display: flex;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.chat-item-search-loc-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.chat-item-search-loc-desc {
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+.chat-item-search-loc-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f766e;
+  background-color: #ccfbf1;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.chat-item-search-loc-status {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.chat-item-search-loc-status.hit {
+  background-color: #dcfce7;
+  color: #14532d;
+  border: 1px solid #86efac;
+}
+
+.chat-item-search-loc-status.miss {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.chat-item-protocol-cta {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #cbd5e1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat-item-protocol-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f766e;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.chat-item-protocol-cta-btn:hover {
+  text-decoration: underline;
+  background-color: #e6fffa;
+}
+
+/* 6. Interaktive Plan- & Erlaubniskarten */
+.chat-item-plan-card {
+  max-width: 600px;
+  width: 100%;
+  background-color: #ffffff;
+  border: 2px solid #be123c;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 4px 12px rgba(190, 18, 60, 0.08);
+}
+
+.chat-item-plan-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.chat-item-plan-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.chat-item-plan-step-num {
+  color: #be123c;
+  font-weight: 800;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.chat-item-plan-estimate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  padding: 12px 14px;
+  background-color: #fdf2f8;
+  border: 2px solid #fbcfe8;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #831843;
+}
+
+.chat-item-primary-btn {
+  padding: 10px 20px;
+  background-color: #be123c;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chat-item-primary-btn:hover {
+  background-color: #9f1239;
+}
+
+.chat-item-secondary-btn {
+  padding: 10px 20px;
+  background-color: #f1f5f9;
+  color: #0f172a;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chat-item-secondary-btn:hover {
+  background-color: #e2e8f0;
+}

@@ -1,0 +1,232 @@
+/**
+ * @file PipelineSidebar.css
+ * Styling für die Pipeline-Stationen und Anbieter-Rangliste mit maximalem Kontrast.
+ */
+
+.pipeline-sidebar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pipeline-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #cbd5e1;
+}
+
+.pipeline-section-title {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0f172a;
+}
+
+.pipeline-station-card {
+  position: relative;
+  border: 2px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 14px;
+  background-color: #ffffff;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.15s ease;
+}
+
+.pipeline-station-card.clickable {
+  cursor: pointer;
+}
+
+.pipeline-station-card.clickable:hover {
+  border-color: #3b82f6;
+  background-color: #f8fafc;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+}
+
+.pipeline-station-card.active {
+  border-color: #be123c;
+  box-shadow: 0 0 0 3px rgba(190, 18, 60, 0.15);
+}
+
+.pipeline-station-card.disabled {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+  opacity: 0.65;
+}
+
+.pipeline-count-badge {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 12px;
+  background-color: #e2e8f0;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.pipeline-count-badge.cache {
+  background-color: #dbeafe;
+  color: #1e40af;
+  border-color: #bfdbfe;
+}
+
+.pipeline-count-badge.library {
+  background-color: #dcfce7;
+  color: #166534;
+  border-color: #bbf7d0;
+}
+
+.pipeline-count-badge.web {
+  background-color: #ccfbf1;
+  color: #0f766e;
+  border-color: #99f6e4;
+}
+
+.pipeline-count-badge.provider {
+  background-color: #ffedd5;
+  color: #c2410c;
+  border-color: #fed7aa;
+}
+
+.pipeline-step-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 800;
+  background-color: #f1f5f9;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+}
+
+.pipeline-step-badge.active {
+  background-color: #be123c;
+  color: #ffffff;
+  border: none;
+}
+
+.pipeline-station-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.pipeline-station-subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.pipeline-status-badge {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.pipeline-status-ready {
+  background-color: #dcfce7;
+  color: #14532d;
+  border: 1px solid #86efac;
+}
+
+.pipeline-status-active {
+  background-color: #ffe4e6;
+  color: #881337;
+  border: 1px solid #fecdd3;
+}
+
+.pipeline-status-disabled {
+  background-color: #e2e8f0;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+/* Anbieter-Rangliste Box */
+.provider-ranking-box {
+  border: 2px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 16px;
+  background-color: #ffffff;
+  transition: all 0.15s ease;
+}
+
+.provider-ranking-box.clickable {
+  cursor: pointer;
+}
+
+.provider-ranking-box.clickable:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.1);
+}
+
+.provider-item-card {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 2px solid #cbd5e1;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.provider-item-card.selected {
+  border-color: #be123c;
+  background-color: #fff1f2;
+}
+
+.provider-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.provider-score {
+  font-size: 14px;
+  font-weight: 800;
+  font-family: 'JetBrains Mono', monospace;
+  color: #0f172a;
+}
+
+.provider-desc {
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+  margin: 4px 0 8px 0;
+  line-height: 1.4;
+}
+
+.provider-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+.provider-bar-track {
+  height: 8px;
+  width: 100%;
+  background-color: #cbd5e1;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.provider-bar-fill-green {
+  height: 100%;
+  background-color: #15803d; /* Starkes Grün */
+}
+
+.provider-bar-fill-teal {
+  height: 100%;
+  background-color: #0f766e; /* Starkes Teal */
+}

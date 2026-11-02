@@ -1,0 +1,126 @@
+/**
+ * @file ReceiptCard.css
+ * Monospace Beleg-Styling mit tiefschwarzem Text und klaren gestrichelten Linien.
+ */
+
+.receipt-card-container {
+  width: 100%;
+  max-width: 440px;
+  background-color: #ffffff;
+  border: 2px dashed #64748b;
+  border-radius: 14px;
+  padding: 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: #0f172a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.receipt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px dashed #94a3b8;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.receipt-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0f172a;
+}
+
+.receipt-trace-badge {
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f172a;
+  background-color: #e2e8f0;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.receipt-step-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.receipt-step-name {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.receipt-step-name.skipped {
+  text-decoration: line-through;
+  color: #64748b;
+}
+
+.receipt-step-tokens {
+  font-weight: 800;
+  color: #be123c;
+}
+
+.receipt-divider {
+  border-top: 2px dashed #94a3b8;
+  margin: 14px 0;
+}
+
+.receipt-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.receipt-savings-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 800;
+  color: #14532d;
+  background-color: #dcfce7;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #86efac;
+  margin-bottom: 8px;
+}
+
+.receipt-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 4px;
+}
+
+.receipt-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f766e;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.receipt-link-btn:hover {
+  color: #115e59;
+}

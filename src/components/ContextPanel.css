@@ -1,0 +1,148 @@
+/**
+ * @file ContextPanel.css
+ * Styling für das Kontext-Steuerungspanel mit tiefschwarzem Text und sichtbaren Rahmen.
+ */
+
+.context-panel-dialog {
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: 12px;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: #ffffff;
+  border: 2px solid #64748b;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.context-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #cbd5e1;
+}
+
+.context-panel-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.context-panel-desc {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  margin-top: 2px;
+}
+
+.context-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.context-source-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  background-color: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.context-source-card:hover:not(:disabled) {
+  border-color: #0f172a;
+  background-color: #f8fafc;
+}
+
+.context-source-card.checked {
+  background-color: #fff1f4;
+  border-color: #ff6b8a;
+}
+
+.context-source-card:disabled {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.context-source-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.context-source-subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.context-checkbox-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #94a3b8;
+  background-color: #ffffff;
+}
+
+.context-checkbox-box.checked {
+  background-color: #ff6b8a;
+  border-color: #ff6b8a;
+  color: #ffffff;
+}
+
+/* Grenzen Schalter Zeile */
+.context-boundaries-section {
+  padding-top: 14px;
+  border-top: 2px solid #cbd5e1;
+}
+
+.context-boundaries-header {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.context-switch-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  background-color: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.context-switch-label:hover {
+  border-color: #94a3b8;
+}
+
+.context-switch-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.context-switch-desc {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}

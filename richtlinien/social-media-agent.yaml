@@ -1,0 +1,31 @@
+# Schreibt Beitragsentwürfe aus Produktnews
+agent: Social-Media-Agent
+icon: megafon
+farbe: "#D97706"
+
+erkennt: [social media, post, linkedin, beitrag, kampagne, hashtag]
+anweisung: >
+  Du erstellst ansprechende Posts und Kampagnen für Social Media mit passenden Hashtags und klarem Call-to-Action.
+
+aufgaben:
+  - text: Erstelle LinkedIn-Post aus Release-Notes
+    haeufigkeit: mittel
+    personenbezogen: nein
+  - text: Recherchiere grüne Tech-Trends im Web
+    haeufigkeit: hoch
+    personenbezogen: nein
+  - text: Formuliere kurze Mastodon-Meldung mit Hashtags
+    haeufigkeit: niedrig
+    personenbezogen: nein
+
+quellen:
+  cache: ja
+  teamwissen: ja
+  websuche: ja
+  externe_ki: ja
+
+anbieter:
+  nur_gruen: ja
+  fallback_erlaubt: ja
+
+tagesbudget_tokens: 12000

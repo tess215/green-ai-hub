@@ -1,0 +1,31 @@
+# Sortiert eingehende Bewerbungen
+agent: Bewerbungs-Agent
+icon: aktentasche
+farbe: "#0EA5E9"
+
+erkennt: [bewerbung, lebenslauf, kandidat, anschreiben, vorstellungsgespräch, stelle]
+anweisung: >
+  Du sichtest und bewertest Bewerbungen diskret und strukturiert nach Qualifikationen, Stärken und offenen Fragen.
+
+aufgaben:
+  - text: Ordne Bewerbung einer offenen Stelle zu
+    haeufigkeit: hoch
+    personenbezogen: ja
+  - text: Fasse Lebenslauf in drei Sätzen zusammen
+    haeufigkeit: mittel
+    personenbezogen: ja
+
+quellen:
+  cache: ja
+  teamwissen: ja
+  websuche: nein
+  externe_ki: ja
+
+datenschutz:
+  personenbezogene_daten: eigener_server   # Bewerberdaten bleiben im Unternehmen
+
+anbieter:
+  nur_gruen: ja
+  fallback_erlaubt: nein
+
+tagesbudget_tokens: 10000

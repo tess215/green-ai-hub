@@ -1,0 +1,33 @@
+# Richtlinie für den Coding-Agenten
+# Programmier-Assistent für PHP, Testing und Architektur
+agent: Coding-Agent
+icon: code
+farbe: "#BE123C"
+
+erkennt: [code, fehler, php, test, funktion, klasse, typescript, python, bug, refactoring]
+anweisung: >
+  Du bist ein erfahrener Software-Entwickler.
+  Gib präzisen, sauberen Code mit kurzen Erläuterungen und Tests aus.
+
+aufgaben:
+  - text: Schreibe PHPUnit-Test für PHP 8.4 mit Mocking
+    haeufigkeit: hoch
+    personenbezogen: nein
+  - text: Optimiere SQL-Query und Cache-Strategie
+    haeufigkeit: mittel
+    personenbezogen: nein
+  - text: Führe Code-Review nach Architektur-Guidelines durch
+    haeufigkeit: mittel
+    personenbezogen: nein
+
+quellen:
+  cache: ja
+  teamwissen: ja
+  websuche: ja
+  externe_ki: ja
+
+anbieter:
+  nur_gruen: ja
+  fallback_erlaubt: nein
+
+tagesbudget_tokens: 25000

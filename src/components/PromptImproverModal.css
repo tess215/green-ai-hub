@@ -1,0 +1,323 @@
+/**
+ * @file PromptImproverModal.css
+ * Barrierefreies Styling für den 3-stufigen Prompt-Verbesserer und Ähnlichkeits-Check.
+ * Hoher Kontrast (> 10:1), lesbare Typografie, saubere Kennzeichnung von Korrekturen und Ergänzungen.
+ */
+
+.improver-modal-backdrop {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 20px;
+  right: 20px;
+  z-index: 60;
+  background-color: #ffffff;
+  border: 2px solid #0f172a;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 12px 30px -5px rgba(15, 23, 42, 0.2);
+}
+
+.improver-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.improver-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.improver-close-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  color: #475569;
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.improver-close-btn:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Status-Leiste während der Schritte */
+.improver-status-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background-color: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 14px;
+}
+
+.improver-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #cbd5e1;
+  border-top-color: #be123c;
+  border-radius: 50%;
+  animation: improver-spin 0.6s linear infinite;
+}
+
+@keyframes improver-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Karte 1: Schon beantwortet (Schritt 1 Treffer) */
+.improver-already-answered-card {
+  background-color: #f0fdf4;
+  border: 2px solid #16a34a;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.improver-already-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #14532d;
+  margin-bottom: 8px;
+}
+
+.improver-already-query {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+  background-color: #ffffff;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #86efac;
+  margin: 8px 0;
+}
+
+.improver-already-meta {
+  font-size: 12px;
+  font-weight: 700;
+  color: #166534;
+  margin-bottom: 12px;
+}
+
+.improver-actions-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.improver-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  background-color: #15803d;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.improver-btn-primary:hover {
+  background-color: #166534;
+}
+
+.improver-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  background-color: #f1f5f9;
+  color: #0f172a;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.improver-btn-secondary:hover {
+  background-color: #e2e8f0;
+}
+
+.improver-btn-coral {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  background-color: #be123c;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.improver-btn-coral:hover {
+  background-color: #9f1239;
+}
+
+/* Vorschau-Karte (Schritt 3) */
+.improver-diff-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.improver-section-box {
+  background-color: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.improver-section-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.improver-orig-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.improver-proposal-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #0f172a;
+}
+
+/* Farbige Markierungen in der Vorschau */
+.prompt-diff-corrected {
+  text-decoration: underline;
+  text-decoration-color: #15803d;
+  text-decoration-thickness: 2.5px;
+  color: #15803d;
+  font-weight: 800;
+  background-color: #dcfce7;
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+.prompt-diff-added {
+  font-weight: 900;
+  color: #0f172a;
+  background-color: #f1f5f9;
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+.prompt-diff-unchanged {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.improver-tokens-note {
+  font-size: 12px;
+  font-weight: 800;
+  color: #7e22ce;
+  background-color: #faf5ff;
+  border: 1px solid #d8b4fe;
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+}
+
+.improver-step3-cache-notice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 14px;
+  background-color: #eff6ff;
+  border: 2px solid #93c5fd;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e40af;
+}
+
+/* Live Hinweis beim Tippen (A) */
+.live-cache-hint {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #14532d;
+  animation: live-hint-appear 0.2s ease-out;
+}
+
+@keyframes live-hint-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.live-cache-hint-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+}
+
+.live-cache-hint-action {
+  background: none;
+  border: none;
+  color: #15803d;
+  text-decoration: underline;
+  font-weight: 800;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.live-cache-hint-action:hover {
+  background-color: #dcfce7;
+  color: #14532d;
+}

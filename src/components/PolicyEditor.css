@@ -1,0 +1,365 @@
+/**
+ * @file PolicyEditor.css
+ * Styling für den Richtlinien-Editor (Tab "Richtlinien") mit barrierefreier Farbgebung,
+ * Monospace-Editor mit Zeilennummern, Syntax-Highlighting und klar lesbaren Fehlerhinweisen.
+ */
+
+.policy-editor-container {
+  display: flex;
+  height: 100%;
+  min-height: 580px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 2px solid #cbd5e1;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+/* Linke Spalte: Dateiliste */
+.policy-files-sidebar {
+  width: 280px;
+  background-color: #f8fafc;
+  border-right: 2px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.policy-files-header {
+  padding: 18px 16px;
+  border-bottom: 2px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.policy-folder-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #334155;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.policy-file-list {
+  flex: 1;
+  padding: 12px 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.policy-file-item {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-color: transparent;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  transition: all 0.15s ease;
+}
+
+.policy-file-item:hover {
+  background-color: #e2e8f0;
+}
+
+.policy-file-item.active {
+  background-color: #ffffff;
+  border-color: #334155;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.policy-file-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.policy-file-name {
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f172a;
+  font-family: "JetBrains Mono", monospace;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.policy-file-agent-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.policy-file-date {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.policy-files-footer {
+  padding: 14px 16px;
+  border-top: 2px solid #e2e8f0;
+  background-color: #ffffff;
+}
+
+.policy-new-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background-color: #334155;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.policy-new-btn:hover {
+  background-color: #1e293b;
+}
+
+/* Rechte Spalte: Editor */
+.policy-editor-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  min-width: 0;
+}
+
+.policy-editor-header {
+  padding: 14px 20px;
+  border-bottom: 2px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.policy-editor-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.policy-editor-filename {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+  font-family: "JetBrains Mono", monospace;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.policy-editor-last-modified {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.policy-editor-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.policy-btn-secondary {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  background-color: #f1f5f9;
+  border: 1.5px solid #cbd5e1;
+  color: #0f172a;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.policy-btn-secondary:hover {
+  background-color: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+.policy-btn-primary {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 800;
+  background-color: #15803d;
+  border: 1.5px solid #166534;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.policy-btn-primary:hover {
+  background-color: #166534;
+}
+
+/* Editor Workspace mit Zeilennummern */
+.policy-code-workspace {
+  flex: 1;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  background-color: #f8fafc;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.policy-line-numbers {
+  width: 48px;
+  padding: 16px 8px;
+  background-color: #f1f5f9;
+  border-right: 2px solid #e2e8f0;
+  text-align: right;
+  color: #64748b;
+  font-weight: 600;
+  user-select: none;
+  overflow: hidden;
+}
+
+.policy-textarea-container {
+  flex: 1;
+  position: relative;
+  height: 100%;
+}
+
+.policy-textarea {
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  border: none;
+  outline: none;
+  resize: none;
+  background-color: transparent;
+  color: #0f172a;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: pre;
+  tab-size: 2;
+}
+
+/* Syntax Highlighting Vorschau (unter oder umschaltbar) */
+.policy-syntax-badge {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  background-color: #e2e8f0;
+  color: #334155;
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+/* Fehlerbereich direkt unter Editor */
+.policy-error-box {
+  padding: 14px 20px;
+  background-color: #fef2f2;
+  border-top: 2px solid #f87171;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.policy-error-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #991b1b;
+}
+
+/* Erfolgsmeldung */
+.policy-success-banner {
+  padding: 12px 20px;
+  background-color: #f0fdf4;
+  border-top: 2px solid #86efac;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #166534;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* Modal für Neue Richtlinie */
+.policy-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.policy-modal-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 2px solid #cbd5e1;
+  padding: 24px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.policy-modal-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.policy-modal-desc {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 16px;
+}
+
+.policy-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  color: #0f172a;
+  outline: none;
+  margin-bottom: 16px;
+}
+
+.policy-input:focus {
+  border-color: #334155;
+}
+
+.policy-modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}

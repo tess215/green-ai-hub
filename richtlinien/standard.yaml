@@ -1,0 +1,19 @@
+# Standard-Richtlinie
+# Gilt für Agenten ohne eigene Richtlinien-Datei
+agent: Standard
+
+erkennt: []
+anweisung: >
+  Du bist der allgemeine Kolibri-Assistent. Antworte hilfsbereit, präzise und ressourcensparend.
+
+quellen:
+  cache: ja
+  teamwissen: ja
+  websuche: nein
+  externe_ki: nein
+
+anbieter:
+  nur_gruen: ja
+  fallback_erlaubt: nein
+
+tagesbudget_tokens: 5000

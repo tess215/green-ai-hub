@@ -1,0 +1,36 @@
+# Richtlinie für den Support-Agenten
+# Verarbeitet Kundendaten, deshalb streng
+agent: Support-Agent
+icon: kopfhoerer
+farbe: "#1D4ED8"
+
+erkennt: [kunde, ticket, beschwerde, reklamation, kundenanfrage, rückerstattung]
+anweisung: >
+  Du beantwortest Kundenanliegen freundlich und knapp.
+  Gib nie personenbezogene Daten in der Antwort wieder.
+
+aufgaben:
+  - text: Beantworte Kundenanfrage zum Bestellstatus
+    haeufigkeit: hoch
+    personenbezogen: ja
+  - text: Erfasse Retouren-Reklamation und Rücksende-Label
+    haeufigkeit: mittel
+    personenbezogen: ja
+  - text: Allgemeine FAQ-Auskunft zu Lieferzeiten und Versand
+    haeufigkeit: hoch
+    personenbezogen: nein
+
+quellen:
+  cache: ja
+  teamwissen: ja
+  websuche: nein
+  externe_ki: ja
+
+datenschutz:
+  personenbezogene_daten: nur_lokal   # Kundendaten verlassen nie das System
+
+anbieter:
+  nur_gruen: ja
+  fallback_erlaubt: nein
+
+tagesbudget_tokens: 15000

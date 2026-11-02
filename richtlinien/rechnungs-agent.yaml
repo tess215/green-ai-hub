@@ -1,0 +1,33 @@
+# Richtlinie für den Rechnungs-Agenten
+# Prüft Rechnungen, sehr viele gleiche Anfragen
+agent: Rechnungs-Agent
+icon: rechnung
+farbe: "#0F766E"
+
+erkennt: [rechnung, beleg, mahnung, zahlungserinnerung, gutschrift, rechnungsbetrag]
+anweisung: >
+  Du erstellst und prüfst Rechnungen. Antworte strukturiert:
+  Rechnungsposten als Tabelle, darunter Summe, MwSt. und fehlende Pflichtangaben.
+
+aufgaben:
+  - text: Prüfe Rechnungsbetrag und IBAN gegen Lieferantenstamm
+    haeufigkeit: hoch
+    personenbezogen: ja
+  - text: Suche doppelt eingereichte Belege und Quittungen
+    haeufigkeit: hoch
+    personenbezogen: ja
+  - text: Erfasse Belegkategorie und Vorsteuer
+    haeufigkeit: mittel
+    personenbezogen: nein
+
+quellen:
+  cache: ja
+  teamwissen: ja
+  websuche: ja
+  externe_ki: ja
+
+anbieter:
+  nur_gruen: ja
+  fallback_erlaubt: nein   # lieber warten als nicht-grün
+
+tagesbudget_tokens: 20000

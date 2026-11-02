@@ -1,0 +1,365 @@
+.extai-panel-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #0f172a;
+}
+
+.extai-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.extai-metric-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 8px;
+  text-align: center;
+}
+
+.extai-metric-val {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ea580c;
+  font-family: "JetBrains Mono", monospace;
+  line-height: 1.2;
+}
+
+.extai-metric-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+  margin-top: 4px;
+}
+
+.extai-tabs-bar {
+  display: flex;
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  padding: 3px;
+  gap: 4px;
+}
+
+.extai-tab-btn {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.extai-tab-btn:hover {
+  color: #0f172a;
+}
+
+.extai-tab-btn.active {
+  background-color: #ffffff;
+  color: #c2410c;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Tab 1: Letzte Anfrage */
+.extai-section-box {
+  border-radius: 10px;
+  border: 1.5px solid #cbd5e1;
+  background-color: #ffffff;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.extai-section-box.strategy {
+  border-color: #fdba74;
+  border-left: 4px solid #ea580c;
+}
+
+.extai-section-box.permission {
+  border-color: #cbd5e1;
+  border-left: 4px solid #64748b;
+  background-color: #f8fafc;
+}
+
+.extai-section-box.adapter {
+  border-color: #d8b4fe;
+  border-left: 4px solid #8b5cf6;
+}
+
+.extai-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.extai-section-title {
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.extai-section-box.strategy .extai-section-title {
+  color: #c2410c;
+}
+
+.extai-section-box.adapter .extai-section-title {
+  color: #6d28d9;
+}
+
+/* Ranking Table */
+.extai-ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.extai-ranking-table th {
+  text-align: left;
+  padding: 6px 8px;
+  background-color: #f1f5f9;
+  color: #475569;
+  font-weight: 800;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.extai-ranking-table td {
+  padding: 8px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.extai-ranking-row.chosen {
+  background-color: #fff7ed;
+  font-weight: 700;
+}
+
+.extai-ranking-row.disabled {
+  opacity: 0.6;
+}
+
+.extai-ranking-row.disabled td:first-child {
+  text-decoration: line-through;
+  color: #dc2626;
+}
+
+.extai-bar-mini {
+  height: 6px;
+  background-color: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 60px;
+  display: inline-block;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.extai-bar-fill-green {
+  height: 100%;
+  background-color: #15803d;
+}
+
+.extai-bar-fill-teal {
+  height: 100%;
+  background-color: #0f766e;
+}
+
+/* Tokens Token Grid */
+.extai-token-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  background-color: #f8fafc;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.extai-token-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.extai-token-stat-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.extai-token-stat-val {
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f172a;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Code Preview */
+.extai-json-preview {
+  background-color: #0f172a;
+  color: #f8fafc;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-family: "JetBrains Mono", monospace;
+  overflow-x: auto;
+  line-height: 1.4;
+}
+
+/* Tab 2: Anbieter */
+.extai-providers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.extai-provider-card {
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 12px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.15s ease;
+}
+
+.extai-provider-card.disabled {
+  opacity: 0.65;
+  background-color: #f8fafc;
+}
+
+.extai-provider-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.extai-provider-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.extai-badge-green {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: #dcfce7;
+  color: #14532d;
+  border: 1px solid #86efac;
+}
+
+.extai-badge-std {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.extai-provider-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  font-size: 11px;
+  color: #334155;
+  background-color: #f8fafc;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+/* Tab 3: Strategie */
+.extai-strategy-card {
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 14px;
+  background-color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.extai-strategy-card:hover {
+  border-color: #fb923c;
+}
+
+.extai-strategy-card.selected {
+  border-color: #ea580c;
+  background-color: #fff7ed;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.15);
+}
+
+.extai-strategy-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.extai-efficiency-explain {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 12px;
+  color: #334155;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  line-height: 1.5;
+}
+
+.extai-efficiency-step {
+  display: flex;
+  justify-content: space-between;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: #0f172a;
+}
+
+/* Bottom Settings */
+.extai-settings-box {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.extai-setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.extai-setting-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.extai-setting-desc {
+  font-size: 11px;
+  color: #475569;
+  font-weight: 500;
+}

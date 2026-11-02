@@ -1,0 +1,33 @@
+# Richtlinie für den Meeting-Agenten
+# Fasst Besprechungen zusammen, nutzt Teamwissen
+agent: Meeting-Agent
+icon: kalender
+farbe: "#7E22CE"
+
+erkennt: [besprechung, meeting, protokoll, termin, zusammenfassung]
+anweisung: >
+  Du fasst Besprechungen und Termine strukturiert zusammen.
+  Liste Teilnehmer, Beschlüsse und offene Aufgaben mit Zuständigkeiten auf.
+
+aufgaben:
+  - text: Fasse Besprechungsnotizen in drei Kernpunkten zusammen
+    haeufigkeit: mittel
+    personenbezogen: nein
+  - text: Erstelle To-Do-Liste mit Verantwortlichen aus Transkript
+    haeufigkeit: mittel
+    personenbezogen: ja
+  - text: Formuliere Folge-E-Mail an Teilnehmer
+    haeufigkeit: mittel
+    personenbezogen: ja
+
+quellen:
+  cache: ja
+  teamwissen: ja
+  websuche: nein
+  externe_ki: ja
+
+anbieter:
+  nur_gruen: ja
+  fallback_erlaubt: ja
+
+tagesbudget_tokens: 10000
